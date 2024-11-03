@@ -1,0 +1,21 @@
+.card-hover-effect {
+    position: relative;
+    overflow: hidden; /* Ensures the line stays within the card */
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .card-hover-effect::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 4px; /* Height of the line */
+    background-color: #5E3BEE; /* Color of the line */
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .card-hover-effect:hover::after {
+    left: 0;
+    width: 100%; /* Line expands fully */
+  }
