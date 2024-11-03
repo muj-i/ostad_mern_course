@@ -25,15 +25,8 @@
       <!-- About Section -->
       <div id="aboutMeContainer"></div>
 
-      <!-- Projects Section -->
-      <section class="py-5" id="projects">
-        <div class="container px-5">
-          <h2 class="display-5 fw-bolder text-center">
-            <span class="text-gradient d-inline">Projects</span>
-          </h2>
-          <!-- Add your project content here -->
-        </div>
-      </section>
+      <!-- Portfolio Section -->
+       <div id="portfolioContainer"></div>
 
       <!-- Contact Section -->
       <section class="bg-light py-5" id="contact">
@@ -99,6 +92,14 @@
             .then((response) => response.text())
             .then((data) => {
                 document.getElementById("aboutMeContainer").innerHTML = data;
+            })
+            .catch((error) => console.error("Error loading header:", error));
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("portfolio.html")
+            .then((response) => response.text())
+            .then((data) => {
+                document.getElementById("portfolioContainer").innerHTML = data;
             })
             .catch((error) => console.error("Error loading header:", error));
         });
