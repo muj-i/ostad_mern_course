@@ -28,16 +28,8 @@
       <!-- Portfolio Section -->
        <div id="portfolioContainer"></div>
 
-      <!-- Contact Section -->
-      <section class="bg-light py-5" id="contact">
-        <div class="container px-5">
-          <h2 class="display-5 fw-bolder text-center">
-            <span class="text-gradient d-inline">Contact</span>
-          </h2>
-          <!-- Add your contact content here -->
-        </div>
-      </section>
-    </main>
+      <!-- Feedback -->
+       <div id="feedbackContainer"></div>
 
     <!-- Footer -->
     <footer class="bg-white py-4 mt-auto">
@@ -100,6 +92,14 @@
             .then((response) => response.text())
             .then((data) => {
                 document.getElementById("portfolioContainer").innerHTML = data;
+            })
+            .catch((error) => console.error("Error loading header:", error));
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("feedback.html")
+            .then((response) => response.text())
+            .then((data) => {
+                document.getElementById("feedbackContainer").innerHTML = data;
             })
             .catch((error) => console.error("Error loading header:", error));
         });
