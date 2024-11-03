@@ -31,6 +31,9 @@
       <!-- Feedback -->
        <div id="feedbackContainer"></div>
 
+       <!-- Contact-->
+      <div id="contactContainer"></div>
+
     <!-- Footer -->
     <footer class="bg-white py-4 mt-auto">
       <div class="container px-5">
@@ -103,6 +106,15 @@
             })
             .catch((error) => console.error("Error loading header:", error));
         });
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("contact.html")
+            .then((response) => response.text())
+            .then((data) => {
+                document.getElementById("contactContainer").innerHTML = data;
+            })
+            .catch((error) => console.error("Error loading header:", error));
+        });
+
     </script>
   </body>
 </html>
