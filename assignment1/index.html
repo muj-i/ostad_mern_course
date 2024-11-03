@@ -3,118 +3,66 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>logoipsum</title>
+    <title>Logoipsum</title>
     <link rel="icon" type="image/x-icon" href="assets/user_pic2.png" />
     <link href="css/bootstrap.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
-    <!-- <link href="css/style.css" rel="stylesheet" /> -->
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" /> -->
   </head>
 
   <body class="d-flex flex-column">
     <main>
       <!-- Navigation -->
-      <nav
-        id="navContainer"
-        class="navbar shadow-sm sticky-top navbar-expand-lg navbar-light bg-white py-2"
-      ></nav>
+      <nav id="navContainer" class="navbar shadow-sm sticky-top navbar-expand-lg navbar-light bg-white py-2"></nav>
+      
       <!-- Header -->
       <div id="headerContainer"></div>
 
+      <!-- Skill Section -->
       <div id="skillContainer"></div>
+
       <!-- About Section -->
       <div id="aboutMeContainer"></div>
 
       <!-- Portfolio Section -->
-       <div id="portfolioContainer"></div>
+      <div id="portfolioContainer"></div>
 
-      <!-- Feedback -->
-       <div id="feedbackContainer"></div>
+      <!-- Feedback Section -->
+      <div id="feedbackContainer"></div>
 
-       <!-- Contact-->
+      <!-- Contact Section -->
       <div id="contactContainer"></div>
 
-    <!-- Footer -->
-    <footer class="bg-white py-4 mt-auto">
-      <div class="container px-5">
-        <div
-          class="row align-items-center justify-content-between flex-column flex-sm-row"
-        >
-          <div class="col-auto">
-            <div class="small m-0">Copyright &copy; Your Website 2024</div>
-          </div>
-          <div class="col-auto">
-            <a class="small" href="#!">Privacy</a>
-            <span class="mx-1">&middot;</span>
-            <a class="small" href="#!">Terms</a>
-            <span class="mx-1">&middot;</span>
-            <a class="small" href="#!">Contact</a>
-          </div>
-        </div>
-      </div>
-    </footer>
+      <!-- Footer -->
+      <div id="footerContainer"></div>
+    </main>
 
     <!-- Bootstrap JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-      // JavaScript to include the header
       document.addEventListener("DOMContentLoaded", function () {
-        fetch("navigation.html")
-          .then((response) => response.text())
-          .then((data) => {
-            document.getElementById("navContainer").innerHTML = data;
-          })
-          .catch((error) => console.error("Error loading navigation:", error));
-      });
-      document.addEventListener("DOMContentLoaded", function () {
-        fetch("header.html")
-          .then((response) => response.text())
-          .then((data) => {
-            document.getElementById("headerContainer").innerHTML = data;
-          })
-          .catch((error) => console.error("Error loading header:", error));
-      });
-      document.addEventListener("DOMContentLoaded", function () {
-        fetch("skill.html")
-          .then((response) => response.text())
-          .then((data) => {
-            document.getElementById("skillContainer").innerHTML = data;
-          })
-          .catch((error) => console.error("Error loading header:", error));
-      });
-        document.addEventListener("DOMContentLoaded", function () {
-            fetch("about_me.html")
-            .then((response) => response.text())
-            .then((data) => {
-                document.getElementById("aboutMeContainer").innerHTML = data;
-            })
-            .catch((error) => console.error("Error loading header:", error));
-        });
-        document.addEventListener("DOMContentLoaded", function () {
-            fetch("portfolio.html")
-            .then((response) => response.text())
-            .then((data) => {
-                document.getElementById("portfolioContainer").innerHTML = data;
-            })
-            .catch((error) => console.error("Error loading header:", error));
-        });
-        document.addEventListener("DOMContentLoaded", function () {
-            fetch("feedback.html")
-            .then((response) => response.text())
-            .then((data) => {
-                document.getElementById("feedbackContainer").innerHTML = data;
-            })
-            .catch((error) => console.error("Error loading header:", error));
-        });
-        document.addEventListener("DOMContentLoaded", function () {
-            fetch("contact.html")
-            .then((response) => response.text())
-            .then((data) => {
-                document.getElementById("contactContainer").innerHTML = data;
-            })
-            .catch((error) => console.error("Error loading header:", error));
-        });
+        const sections = [
+          { id: "navContainer", file: "navigation.html" },
+          { id: "headerContainer", file: "header.html" },
+          { id: "skillContainer", file: "skill.html" },
+          { id: "aboutMeContainer", file: "about_me.html" },
+          { id: "portfolioContainer", file: "portfolio.html" },
+          { id: "feedbackContainer", file: "feedback.html" },
+          { id: "contactContainer", file: "contact.html" },
+          { id: "footerContainer", file: "footer.html" }
+        ];
 
+        sections.forEach(section => {
+          fetch(section.file)
+            .then(response => {
+              if (!response.ok) throw new Error(`Failed to load ${section.file}`);
+              return response.text();
+            })
+            .then(data => {
+              document.getElementById(section.id).innerHTML = data;
+            })
+            .catch(error => console.error(error));
+        });
+      });
     </script>
   </body>
 </html>
