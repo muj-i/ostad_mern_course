@@ -19,3 +19,16 @@
     left: 0;
     width: 100%; /* Line expands fully */
   }
+
+input.form-control,
+select.form-select,
+textarea.form-control {
+    border-color: #5E3BEE; /* Custom color */
+}
+
+input.form-control:focus,
+select.form-select:focus,
+textarea.form-control:focus {
+    border-color: #4A2DBB; /* Custom color for focus state */
+    box-shadow: 0 0 0 0.2rem rgba(94, 59, 238, 0.25); /* Optional shadow */
+}
