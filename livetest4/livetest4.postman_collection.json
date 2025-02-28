@@ -1,0 +1,174 @@
+{
+	"info": {
+		"_postman_id": "bc5e6dc4-4128-405d-bc38-748134c112d8",
+		"name": "livetest4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31234435"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"muj\",\n    \"lastName\": \"islam\",\n    \"mobile\": \"01010101001\",\n    \"email\": \"test334@g.com\",\n    \"password\": \"fbewferwf\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5900/api/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5900",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"test3@g.com\",\n    \"password\": \"fbewferwf\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5900/api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5900",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5900/api/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5900",
+							"path": [
+								"api",
+								"profile"
+							],
+							"query": [
+								{
+									"key": null,
+									"value": "{{TOKEN}}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-profile",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"taw\",\n    \"lastName\": \"islam\",\n    \"mobile\": \"01010101001\",\n    \"email\": \"test2@g.com\",\n    \"password\": \"fbewferwf\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5900/api/update-profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5900",
+							"path": [
+								"api",
+								"update-profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "TOKEN",
+			"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QzMzRAZy5jb20iLCJ1c2VySWQiOiI2N2MxZTAyYWRjOWUxYzg1MGYxMGUzNjgiLCJpYXQiOjE3NDA3NTkwODIsImV4cCI6MTc0MzM1MTA4Mn0.mmg_Pg4S16SF4CN_1YEe3OSr7lds2nJ2nETOve9q3mw"
+		}
+	]
+}
