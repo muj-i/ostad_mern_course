@@ -12,11 +12,11 @@ Make sure you have Node.js and npm installed on your machine.
 
 1. Clone the repository:
     ```
-    git clone https://github.com/muj-i/portfolio_crud_expressjs.git
+    git clone https://github.com/muj-i/ostad_mern_course.git
     ```
 2. Navigate to the project directory:
     ```sh
-    cd portfolio_crud_expressjs
+    cd ostad_mern_course/livetest4
     ```
 3. Install the dependencies:
     ```sh
